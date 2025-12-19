@@ -15,10 +15,32 @@
 			};
 			this._companies = new Dictionary<int, Company>
 			{
-				{ 1, new Company { Id = 1, BusinessName = "C", RegistrationNumber = "12345", Turnover = 1_000_000m } },
-				{ 2, new Company { Id = 2, BusinessName = "D", RegistrationNumber = "67890", Turnover = 100_000_000m } },
-				{ 3, new Company { Id = 3, BusinessName = "F", RegistrationNumber = "54321", Turnover = 500_000m } },
-				{ 4, new Company { Id = 4, BusinessName = "G", RegistrationNumber = "54321", Turnover = 10_000_000m } },
+				{ 1, new Company {
+					Id = 1,
+					BusinessName = "C",
+					RegistrationNumber = "12345",
+					Turnover = 1_000_000m }
+				},
+				{ 2, new Company { 
+					Id = 2, 
+					BusinessName = "D", 
+					RegistrationNumber = "67890", 
+					VAT = "9876543210", 
+					Turnover = 100_000_000m }
+				},
+				{ 3, new Company { 
+					Id = 3, 
+					BusinessName = "F", 
+					RegistrationNumber = "54321", 
+					VAT = "1234567890", 
+					Turnover = 500_000m }
+				},
+				{ 4, new Company { 
+					Id = 4,
+					BusinessName = "G",
+					RegistrationNumber = "45678",
+					Turnover = 10_000_000m }
+				},
 			};
 		}
 
