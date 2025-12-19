@@ -14,7 +14,7 @@
 
 		public override int ClientType
 		{
-			get { return this.Turnover > 10_000_000m ? 3 : 2; }
+			get { return this.Turnover >= 10_000_000m ? 3 : 2; }
 		}
 	}
 }

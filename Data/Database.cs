@@ -78,7 +78,7 @@
 
 		public Client? GetClient(string clientId)
 		{
-			if (string.IsNullOrEmpty(clientId))
+			if (clientId.Length == 0)
 				return null;
 			else if (clientId.StartsWith("PI") && int.TryParse(clientId.AsSpan(2), out int id))
 				return this.GetPrivateIndividual(id);
