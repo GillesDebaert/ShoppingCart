@@ -107,5 +107,13 @@
 				throw new ArgumentException($"Not registered price for: {product.Label}", nameof(productId));
 			}
 		}
+
+		public IEnumerable<string> GetListOfClientIds()
+		{
+			return this._privateIndividuals.Values.OfType<Client>()
+				.Concat(this._companies.Values.OfType<Client>())
+				.OrderBy(c => c.ClientName)
+				.Select(c => c.ClientId);
+		}
 	}
 }

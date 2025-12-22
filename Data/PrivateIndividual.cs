@@ -13,7 +13,7 @@
 			get
 			{
 				if (!string.IsNullOrEmpty(this.FirstName) && this.LastName.Length > 0)
-					return $"{FirstName} {LastName}";
+					return $"{LastName}, {FirstName}";
 				else if (this.LastName.Length > 0)
 					return this.LastName;
 				else

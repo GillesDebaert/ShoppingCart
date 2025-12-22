@@ -10,7 +10,7 @@
 
 		public override string ClientId => $"C{Id}";
 
-		public override string ClientName => $"Company: {BusinessName}";
+		public override string ClientName => $"{BusinessName} (Company)";
 
 		public override int ClientType
 		{

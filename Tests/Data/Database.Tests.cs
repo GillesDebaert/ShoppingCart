@@ -97,6 +97,18 @@ namespace ShoppingCart.Tests.Data
 			Assert.Throws<ArgumentException>(a);
 		}
 
+		[Fact]
+		public void Database_GetListOfClientIds()
+		{
+			// prepare
+			var expected = new[] { "PI1", "PI2", "C1", "C2", "PI3", "C3", "C4" };
+
+			// execute
+			var actual = this._database.GetListOfClientIds();
+
+			// verify
+			Assert.Equal(expected, actual);
+		}
 
 		public static TheoryData<int, string?> Database_GetPrivateIndividual_TestData()
 		{
