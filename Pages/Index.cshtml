@@ -1,10 +1,43 @@
 ﻿@page
-@model IndexModel
+@model ShoppingCart.Model.IndexModel
 @{
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h1 class="display-6">Interactive DropDown + Labels + Textboxes</h1>
+
+<form method="post" class="mt-3">
+    <div class="mb-3">
+        <label asp-for="SelectedItem" class="form-label">Choose a client</label>
+        <select asp-for="SelectedItem" asp-items="Model.Items" class="form-select" onchange="this.form.submit()"></select>
+        <div class="form-text">Changing the dropdown will refresh labels. Edit the textboxes and click Apply to update labels.</div>
+    </div>
+    <div>
+        <label id="Label1" class="form-label ms-2">@Model.Label1</label>
+        <label id="Label2" class="form-label ms-2">@Model.Label2</label>
+        <label id="Label3" class="form-label ms-2">@Model.Label3</label>
+        <label id="Label4" class="form-label ms-2">@Model.Label4</label>
+        <label id="Label5" class="form-label ms-2">@Model.Label5</label>
+    </div>
+
+    <div class="mb-3">
+        <label for="Text1" id="Product1" class="form-label">@Model.Product1</label>
+        <input asp-for="Text1" class="form-control mt-1" />
+    </div>
+
+    <div class="mb-3">
+        <label for="Text2" id="Product2" class="form-label">@Model.Product2</label>
+        <input asp-for="Text2" class="form-control mt-1" />
+    </div>
+
+    <div class="mb-3">
+        <label for="Text2" id="Product3" class="form-label">@Model.Product3</label>
+        <input asp-for="Text3" class="form-control mt-1" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Apply</button>
+
+    <div>
+        <label id="TotalPrice" class="form-label ms-2">@Model.TotalPrice</label>
+    </div>
+</form>
