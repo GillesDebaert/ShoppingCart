@@ -65,18 +65,10 @@ namespace ShoppingCart.Model
 			SetLabelsFromSelection();
 			PopulateProducts();
 
-			// If textboxes provided, use them to update labels.
-			// Otherwise, fall back to values derived from the selected item.
 			var list = new List<Tuple<int, int>>();
-			var t = GetProductTuple(1, Text1);
-			if (t != null)
-				list.Add(t);
-			t = GetProductTuple(2, Text2);
-			if (t != null)
-				list.Add(t);
-			t = GetProductTuple(3, Text3);
-			if (t != null)
-				list.Add(t);
+			AppendProductTuple(list, 1, Text1);
+			AppendProductTuple(list, 2, Text2);
+			AppendProductTuple(list, 3, Text3);
 			if (list.Count > 0 && SelectedItem != null)
 			{
 				var calculator = new Calculator(this._database);
@@ -145,12 +137,10 @@ namespace ShoppingCart.Model
 			}
 		}
 
-		private Tuple<int, int>? GetProductTuple(int productId, string? text)
+		private static void AppendProductTuple(List<Tuple<int, int>> list, int productId, string? text)
 		{
 			if (int.TryParse(text, out int quantity) && quantity > 0)
-				return Tuple.Create(productId, quantity);
-			else
-				return null;
+				list.Add(Tuple.Create(productId, quantity));
 		}
 	}
 }
